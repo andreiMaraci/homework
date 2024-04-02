@@ -1,17 +1,16 @@
-package com.homework.common.data.network.interpreter
+package com.homework.common.data.network
 
-import com.homework.common.data.network.NetworkError
 import retrofit2.Response
+import javax.inject.Inject
 
-class ResponseInterpreter: NetworkResponseInterpreter {
+class ResponseInterpreter @Inject constructor() {
 
-    override fun <T> interpret(response: Response<T>): T {
+    fun <T> interpret(response: Response<T>): T {
         return  if (response.isSuccessful) {
                     response.body() ?: throw  NetworkError(errorMessage = "Body is null")
         } else {
             throw NetworkError(errorMessage = response.message())
         }
-
     }
 
 }

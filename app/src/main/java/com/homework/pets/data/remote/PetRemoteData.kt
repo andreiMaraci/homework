@@ -1,7 +1,7 @@
 package com.homework.pets.data.remote
 
 import com.homework.common.data.network.NetworkError
-import com.homework.common.data.network.interpreter.ResponseInterpreter
+import com.homework.common.data.network.ResponseInterpreter
 import com.homework.pets.data.remote.dto.PetDto
 import javax.inject.Inject
 

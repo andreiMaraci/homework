@@ -11,8 +11,8 @@ import com.homework.pets.data.room.DB_PET_NAME
 data class DbAnimal(
     @PrimaryKey val id: Int,
     val age: String,
-    val coat: String,
-    val description: String,
+    val coat: String?,
+    val description: String?,
     val distance: Double,
     val gender: String,
     val name: String,

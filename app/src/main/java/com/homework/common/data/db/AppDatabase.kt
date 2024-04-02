@@ -7,7 +7,7 @@ import com.homework.pets.data.room.PetDao
 import com.homework.pets.data.room.PetTypeConverter
 import com.homework.pets.data.room.entity.DbAnimal
 
-@Database(entities = [DbAnimal::class], version = 1)
+@Database(entities = [DbAnimal::class], version = 1, exportSchema = false)
 @TypeConverters(PetTypeConverter::class)
 abstract class AppDatabase : RoomDatabase() {
     abstract fun petDao() : PetDao

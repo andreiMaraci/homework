@@ -16,7 +16,7 @@ interface PetDao {
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     @JvmSuppressWildcards
-    fun insertUser(animals: List<DbAnimal>)
+    fun insertPets(animals: List<DbAnimal>)
 
     @Delete
     fun removePet(animal: DbAnimal)

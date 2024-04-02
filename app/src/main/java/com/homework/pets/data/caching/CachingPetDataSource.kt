@@ -1,5 +1,6 @@
 package com.homework.pets.data.caching
 
+import android.util.Log
 import com.homework.pets.data.PetDataSource
 import com.homework.pets.data.caching.entity.AnimalEntity
 import com.homework.pets.data.remote.PetRemoteData
@@ -23,7 +24,11 @@ class CachingPetDataSource @Inject constructor(
 
     override suspend fun loadAnimals() {
         petRemoteData.getPet().also { pet ->
-            petDataBase.insertUser(pet.animals.map { it.toDb() })
+            try {
+                petDataBase.insertPets(pet.animals.map { it.toDb() })
+            } catch (e: Exception){
+                Log.d("Boss", e.message.toString())
+            }
         }
     }
 
