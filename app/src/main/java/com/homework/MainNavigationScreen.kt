@@ -16,7 +16,11 @@ fun MainNavigationScreen() {
         composable("login") {
             LoginScreen(
                onLoginSuccess =  {
-                   navController.navigate( "pet_list", )
+                   navController.navigate( "pet_list") {
+                       popUpTo("login"){
+                           inclusive = true
+                       }
+                   }
                }
             )
         }

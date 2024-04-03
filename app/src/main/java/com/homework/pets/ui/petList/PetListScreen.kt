@@ -13,7 +13,7 @@ import com.homework.pets.ui.composable.AnimalItemView
 @Composable
 fun PetListScreen(
     onPetClick: (Int) -> Unit,
-    viewModel: PetListScreenViewModel = hiltViewModel()
+    viewModel: PetListViewModel = hiltViewModel()
 ) {
     val uiState by viewModel.state.collectAsState()
     val state = rememberLazyListState()

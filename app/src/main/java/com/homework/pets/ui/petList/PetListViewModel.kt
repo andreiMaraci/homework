@@ -16,7 +16,7 @@ import kotlinx.coroutines.flow.update
 import javax.inject.Inject
 
 @HiltViewModel
-class PetListScreenViewModel @Inject constructor(
+class PetListViewModel @Inject constructor(
     private val loadAnimalsUseCase: LoadAnimalsUseCase,
     private val getAnimalsUseCase: GetAnimalsUseCase
 ) : ViewModel() {
