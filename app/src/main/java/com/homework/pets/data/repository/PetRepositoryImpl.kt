@@ -17,6 +17,10 @@ class PetRepositoryImpl(
         }
     }
 
+    override fun getAnimal(animalId: Int): Animal {
+        return  petDataSource.getAnimal(animalId).toDomain()
+    }
+
     override suspend fun loadAnimals() {
         petDataSource.loadAnimals()
     }

@@ -14,6 +14,9 @@ interface PetDao {
     @Query("SELECT * FROM $DB_PET_NAME")
     fun getAllPets(): Flow<List<DbAnimal>>
 
+    @Query("SELECT * FROM $DB_PET_NAME WHERE id = :animalId")
+    fun getAnimals(animalId: Int): DbAnimal
+
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     @JvmSuppressWildcards
     fun insertPets(animals: List<DbAnimal>)

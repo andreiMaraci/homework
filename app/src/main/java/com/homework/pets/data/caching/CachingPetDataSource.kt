@@ -22,6 +22,10 @@ class CachingPetDataSource @Inject constructor(
         }
     }
 
+    override fun getAnimal(animalId: Int): AnimalEntity {
+        return petDataBase.getAnimals(animalId).toEntity()
+    }
+
     override suspend fun loadAnimals() {
         petRemoteData.getPet().also { pet ->
             try {

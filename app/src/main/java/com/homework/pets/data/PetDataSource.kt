@@ -7,5 +7,7 @@ interface PetDataSource {
 
     fun getAnimalsFlow(): Flow<List<AnimalEntity>>
 
+    fun getAnimal(animalId: Int): AnimalEntity
+
     suspend fun loadAnimals()
 }

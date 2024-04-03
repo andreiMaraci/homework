@@ -1,4 +1,4 @@
-package com.homework.pets
+package com.homework.pets.ui.petList
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -16,7 +16,7 @@ import kotlinx.coroutines.flow.update
 import javax.inject.Inject
 
 @HiltViewModel
-class PetViewModel @Inject constructor(
+class PetListScreenViewModel @Inject constructor(
     private val loadAnimalsUseCase: LoadAnimalsUseCase,
     private val getAnimalsUseCase: GetAnimalsUseCase
 ) : ViewModel() {

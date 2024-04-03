@@ -7,5 +7,7 @@ interface PetRepository {
 
     fun getAnimalsFlow() : Flow<List<Animal>>
 
+    fun getAnimal(animalId: Int) : Animal
+
     suspend fun loadAnimals()
 }

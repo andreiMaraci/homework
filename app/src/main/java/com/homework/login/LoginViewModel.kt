@@ -18,16 +18,22 @@ import javax.inject.Inject
 class LoginViewModel @Inject constructor (
     private val getAccessTokenUseCase: GetAccessTokenUseCase
 ): ViewModel() {
+
     private val _state = MutableStateFlow(UiState(Unit))
+
+    private val _loginState = MutableStateFlow(false)
 
     val state: StateFlow<UiState<Unit>>
         get() = _state
+
+    val loginState: StateFlow<Boolean>
+        get() = _loginState
 
     fun onClickLogin(){
         getAccessTokenUseCase().onEach { result ->
             _state.update { uiState ->
                 if (result is UseCaseResult.Success) {
-
+                    _loginState.value = true
                 }
                 uiState.copy(contentLoaderState = ContentLoaderState().applyUseCase(result))
             }
